@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Add Coin",
+    "steps": [
+      {
+        "expect": [
+          {
+            "method": "sendMessage",
+            "payload": {
+              "text": "Quickly add predefined coins like Bitcoin, Ethereum, and Toncoin to the watchlist"
+            }
+          }
+        ],
+        "send": {
+          "callback": "watchlist:add:predefined"
+        }
+      }
+    ]
+  }
+]
