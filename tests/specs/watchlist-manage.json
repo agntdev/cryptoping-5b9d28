@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Manage Watchlist",
+    "steps": [
+      {
+        "expect": [
+          {
+            "method": "sendMessage",
+            "payload": {
+              "text": "Open the watchlist management menu with options to add, remove, and configure alerts for coins"
+            }
+          }
+        ],
+        "send": {
+          "callback": "watchlist:manage"
+        }
+      }
+    ]
+  }
+]
