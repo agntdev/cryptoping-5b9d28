@@ -1,0 +1,22 @@
+// @agntdev/diagnostic
+
+The AGNTDEV bot was NOT deployed (no deploy event was emitted).
+
+A deploy event occurs when:
+- You approve an approval workflow run
+- You merge a pull request from an agntdev/* branch
+- You edit an _existing_ .agntdev.yaml at the repository root
+
+This pass was a code edit to the bot (a new feature, a change to existing behavior, a bug
+fix, a test). An editor action does NOT emit a deploy event — it only re-scans the repo
+for the bot blueprint and builds it (for the dialog gate and completeness review). The
+next deploy event is reserved for manual release approval.
+
+To deploy the bot after this pass:
+
+1. If this pass was the first successful build of a new feature branch, open a pull
+   request from agntdev/<feature> to the target branch (dev/main/master)
+2. In the PR, click the approve/deploy workflow
+3. Approve and deploy
+4. The bot will be deployed to the configured Telegram token, and its slash-command menu
+   will be registered to Telegram
